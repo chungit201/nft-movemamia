@@ -4,7 +4,6 @@ import { InputEntryFunctionData } from '@aptos-labs/ts-sdk'
 import { notification } from 'antd'
 import Link from 'next/link'
 import { networkConfig } from '@/utils/network'
-import { handlePushErrorToGoogleSheet } from '@/common/services/google'
 import useContract from '@/common/hooks/useContract'
 
 type TransactionProps = {
@@ -24,14 +23,14 @@ const useTransactionCallback = (): TransactionCallback => {
   const { run } = useContract()
   return useCallback(
     ({
-       payload,
-       startMsg = 'Prompting Transaction',
-       completeMsg = 'Transaction Executed Successfully',
-       actionMsg = '',
-       reset = undefined,
-       setLoading,
-       onSuccess,
-     }: TransactionProps) => {
+      payload,
+      startMsg = 'Prompting Transaction',
+      completeMsg = 'Transaction Executed Successfully',
+      actionMsg = '',
+      reset = undefined,
+      setLoading,
+      onSuccess,
+    }: TransactionProps) => {
       let shouldReset = true
       const callback = async () => {
         if (!account || !connected) return
@@ -50,21 +49,21 @@ const useTransactionCallback = (): TransactionCallback => {
                   description: (
                     <Link
                       target={'_blank'}
-                  className={'flex items-center gap-2'}
-                  href={`https://explorer.aptoslabs.com/txn/${res.hash}?network=${networkConfig()}`}
-                >
-                <span className={'text-[#2458F6] hover:underline font-semibold'}>View transaction</span>
-                </Link>
-              ),
-              })
+                      className={'flex items-center gap-2'}
+                      href={`https://explorer.aptoslabs.com/txn/${res.hash}?network=${networkConfig()}`}
+                    >
+                      <span className={'text-[#2458F6] hover:underline font-semibold'}>View transaction</span>
+                    </Link>
+                  ),
+                })
               }
             })
             .catch((err: any) => {
-              handlePushErrorToGoogleSheet(account?.address as string, err || err.message)
               shouldReset = false
             })
             .finally(() => {
               setLoading?.(false)
+              // eslint-disable-next-line @typescript-eslint/no-unused-expressions
               shouldReset && reset && reset()
               return { hash }
             })

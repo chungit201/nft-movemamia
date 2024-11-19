@@ -1,21 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import '~antd/dist/antd.css';
+@import '~tailwindcss/tailwind.css';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+    background: #111110 !important;
+    font-family: 'Sora', sans-serif !important;
+    color: #FFF !important;
+}
+
+.ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left{
+    border-right: 0px !important;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected{
+    background: transparent !important;
 }
