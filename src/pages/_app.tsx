@@ -10,6 +10,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import reducer from '@/modules/app/reducer'
 import { initRootState } from '@/modules/rootReducer'
 import { Provider as ReduxProvider } from 'react-redux'
+import { Footer } from '@/common/components/Footer'
 
 const wallets = [
   new PetraWallet(),
@@ -39,7 +40,7 @@ export const store = configureStore({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <AptosWalletAdapterProvider
-      plugins={wallets}
+      plugins={wallets as any}
       autoConnect={true}
       onError={(error) => {
         console.log('error', error)
@@ -47,8 +48,8 @@ export default function App({ Component, pageProps }: AppProps) {
     >
       <ReduxProvider store={store}>
         <HeaderPage />
-
         <Component {...pageProps} />
+        <Footer />
       </ReduxProvider>
     </AptosWalletAdapterProvider>
   )

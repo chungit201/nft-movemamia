@@ -50,7 +50,7 @@ export const ModalConnectWallet: React.FunctionComponent<Props> = ({ isModalOpen
           <Divider>Or</Divider>
           <div className={'walletLists max-h-[500px] overflow-y-auto px-3 sm:px-0 '}>
             <div className={'space-y-3'}>
-              {wallets?.map((item: Wallet, index: number) => {
+              {wallets?.map((item: any, index: number) => {
                 return (
                   <Button
                     onClick={() => handleConnect(item as Wallet)}

@@ -7,8 +7,6 @@ export const networkConfig = () => {
   if (currentNetworkEnv === envNane.MAINNET) {
     // network = CONFIGS.mainnet;
     network = Network.CUSTOM
-  } else if (currentNetworkEnv === envNane.STG) {
-    network = Network.CUSTOM
   } else {
     network = Network.CUSTOM
     //throw new Error('Invalid network env');
