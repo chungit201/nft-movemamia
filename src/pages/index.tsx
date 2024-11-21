@@ -16,7 +16,7 @@ export default function Home() {
       </div>
       <div>
         <div className={'w-full h-[2px] relative bg-[#fff] '}>
-          <div className={'absolute max-w-[472px] bg-[#fff] right-0 px-2 top-[2px]'}>
+          <div className={'absolute max-w-full md:max-w-[472px] bg-[#fff] right-0 px-2 top-[2px]'}>
             <Marquee className={' text-[#111110]'}>
               <p>Stellar Panthera NFTs Collection NFTs is an OG NFTs collection on Movement</p>
               <p>Stellar Panthera NFTs Collection NFTs is an OG NFTs collection on Movement</p>
