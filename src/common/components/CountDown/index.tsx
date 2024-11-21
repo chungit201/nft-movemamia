@@ -71,48 +71,36 @@ const CountdownIno: React.FunctionComponent<CountdownProps> = (props) => {
   return (
     <div className={'flex items-center justify-between text-white gap-2'}>
       <div>
-        <div
-          className={'BoxCountDown  rounded-[16px] flex items-center justify-center'}
-          style={{ width: width ?? 70, height: height ?? 70 }}
-        >
+        <div className={'BoxCountDown  rounded-[16px] flex items-center justify-center'}>
           <div className={'text-center'}>
-            <div className={'font-bold text-3xl text-[#fff] dark:text-white'}>{time_left.days}</div>
+            <div className={'font-bold text-2xl sm:text-3xl text-[#fff] dark:text-white'}>{time_left.days}</div>
             <div className={'text-[#7C7C7C] dark:text-[#8E929B] text-xs mt-1'}>DAYS</div>
           </div>
         </div>
       </div>
       <span className={'font-semibold dark:text-[#8E929B]'}>:</span>
       <div>
-        <div
-          className={'BoxCountDown  rounded-[16px] flex items-center justify-center'}
-          style={{ width: width ?? 70, height: height ?? 70 }}
-        >
+        <div className={'BoxCountDown  rounded-[16px] flex items-center justify-center'}>
           <div className={'text-center'}>
-            <div className={'font-bold text-3xl text-[#fff] dark:text-white'}>{time_left.hours}</div>
+            <div className={'font-bold text-2xl sm:text-3xl text-[#fff] dark:text-white'}>{time_left.hours}</div>
             <div className={'text-[#7C7C7C] dark:text-[#8E929B] text-xs mt-1'}>HRS</div>
           </div>
         </div>
       </div>
       <span className={'font-semibold dark:text-[#8E929B]'}>:</span>
       <div>
-        <div
-          className={'BoxCountDown rounded-[16px] flex items-center justify-center'}
-          style={{ width: width ?? 70, height: height ?? 70 }}
-        >
+        <div className={'BoxCountDown rounded-[16px] flex items-center justify-center'}>
           <div className={'text-center'}>
-            <div className={'font-bold text-3xl text-[#fff] dark:text-white'}>{time_left.minutes}</div>
+            <div className={'font-bold text-2xl sm:text-3xl text-[#fff] dark:text-white'}>{time_left.minutes}</div>
             <div className={'text-[#7C7C7C] dark:text-[#8E929B] text-xs mt-1'}>MIN </div>
           </div>
         </div>
       </div>
       <span className={'font-semibold dark:text-[#8E929B]'}>:</span>
       <div>
-        <div
-          className={'BoxCountDown  rounded-[16px] flex items-center justify-center'}
-          style={{ width: width ?? 70, height: height ?? 70 }}
-        >
+        <div className={'BoxCountDown  rounded-[16px] flex items-center justify-center'}>
           <div className={'text-center'}>
-            <div className={'font-bold text-3xl text-[#fff] dark:text-white'}>{time_left.seconds}</div>
+            <div className={'font-bold text-2xl sm:text-3xl text-[#fff] dark:text-white'}>{time_left.seconds}</div>
             <div className={'text-[#7C7C7C] dark:text-[#8E929B] text-xs mt-1'}>SEC</div>
           </div>
         </div>

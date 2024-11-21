@@ -4,11 +4,15 @@ import { Col } from 'antd'
 
 export const InoInfo: React.FunctionComponent = () => {
   return (
-    <Col span={15}>
-      <div className={'flex gap-8'}>
+    <Col xs={24} lg={14} xl={14}>
+      <div className={'flex flex-col sm:flex-row gap-8'}>
         <div>
-          <div className={'w-[250px]'}>
-            <Image className={'w-[250px]'} src={require('@/common/assets/images/NFTs Thumbnail.png')} alt={''} />
+          <div className={'w-full sm:w-[250px] h-auto'}>
+            <Image
+              className={'w-full sm:w-[250px] h-auto'}
+              src={require('@/common/assets/images/NFTs Thumbnail.png')}
+              alt={''}
+            />
           </div>
         </div>
         <div className={'flex flex-col gap-3'}>

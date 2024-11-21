@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Button, Divider, Layout, Menu, Popover, Tooltip } from 'antd'
 import Link from 'next/link'
 
@@ -6,36 +6,22 @@ const { Header } = Layout
 import styles from './Header.module.scss'
 import { default as classNames, default as cx } from 'classnames'
 
-import { Squash as Hamburger } from 'hamburger-react'
 import Image from 'next/image'
-import { useRouter } from 'next/router'
 import { ModalConnectWallet } from '@/common/components/Modals/ModalConnectWallet'
 import { useWallet } from '@aptos-labs/wallet-adapter-react'
 import { avatarImage, copyToClipboard, ellipseAddress } from '@/utils'
-import useTransactionCallback from '@/common/hooks/useTransactionCallback'
 import { removeData } from '@/common/hooks/useLocalStoragre'
 import appActions from '@/modules/app/actions'
 import { useDispatch, useSelector } from 'react-redux'
-import useClient from '@/common/hooks/useClient'
 import useNetworkConfiguration from '@/common/hooks/useNetwork'
 
 export const HeaderPage: React.FunctionComponent = () => {
-  const [pageName, setPageName] = useState('')
-  const [loading, setLoading] = useState(false)
-  const [isOpen, setOpen] = useState(false)
   const [copyText, setCopyText] = useState('Copy')
 
   const { account, disconnect, wallet } = useWallet()
-  const router = useRouter()
-  const transactionCallback = useTransactionCallback()
   const dispatch = useDispatch()
   const app = useSelector((state: any) => state.app)
-  const { faucetClient } = useClient()
   const { networkCfg } = useNetworkConfiguration()
-
-  useEffect(() => {
-    setPageName(router.pathname.replace('/', ''))
-  }, [router])
 
   const handleDisconnect = async () => {
     try {
@@ -159,7 +145,7 @@ export const HeaderPage: React.FunctionComponent = () => {
                 <Popover placement="bottomRight" content={accountInfo} trigger="click">
                   <Button
                     className={
-                      'bg-[#FFF] flex items-center justify-center gap-2 border-[#DCDFEA]  font-semibold h-9 rounded-full text-[#313547]'
+                      'flex items-center justify-center gap-2 border-[#F1CB22] bg-transparent text-[#F1CB22]  font-semibold h-9 rounded-full'
                     }
                   >
                     <img className={'w-[14px] h-auto'} src={wallet?.icon} alt="" />
@@ -177,10 +163,9 @@ export const HeaderPage: React.FunctionComponent = () => {
                 </Button>
               )}
             </div>
-
-            <div className={'block md:hidden'}>
-              <Hamburger color={'#000'} size={24} toggled={isOpen} toggle={setOpen} />
-            </div>
+            {/*<div className={'block md:hidden'}>*/}
+            {/*  <Hamburger color={'#fff'} size={24} toggled={isOpen} toggle={setOpen} />*/}
+            {/*</div>*/}
           </div>
         </div>
       </div>

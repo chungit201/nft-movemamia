@@ -5,9 +5,9 @@ import Image from 'next/image'
 export const CollectionDetails: React.FunctionComponent = () => {
   return (
     <div className={''}>
-      <h2 className={'text-xl text-[#fff] font-semibold my-10'}>Collection Details</h2>
-      <Row gutter={[32, 32]}>
-        <Col span={14}>
+      <h2 className={'text-xl  text-[#fff] font-semibold my-10'}>Collection Details</h2>
+      <Row className={'flex-col-reverse sm:flex-row'} gutter={[32, 32]}>
+        <Col xs={24} md={14} xl={14}>
           <Divider className={'border-[#fff] mt-0 mb-8'} />
           <div className={'mt-2'}>
             <h3 className={'text-[#7C7C7C] text-lg'}>VIP Round</h3>
@@ -86,8 +86,8 @@ export const CollectionDetails: React.FunctionComponent = () => {
             </div>
           </div>
         </Col>
-        <Col span={10}>
-          <div className={'pl-10'}>
+        <Col xs={24} md={10} xl={10}>
+          <div className={'pl-0 sn:pl-10'}>
             <Card bordered={false}>
               <div>
                 <div className={'text-xl text-center text-[#F1CB22]'}>Stellar Panthera NFTs Collection</div>
