@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import { Button, Divider, Layout, Menu, Popover, Tooltip } from 'antd'
+import { Button, Divider, Layout, Popover, Tooltip } from 'antd'
 import Link from 'next/link'
 
 const { Header } = Layout
-import styles from './Header.module.scss'
-import { default as classNames, default as cx } from 'classnames'
+import { default as classNames } from 'classnames'
 
 import Image from 'next/image'
 import { ModalConnectWallet } from '@/common/components/Modals/ModalConnectWallet'
@@ -16,7 +15,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import useNetworkConfiguration from '@/common/hooks/useNetwork'
 
 export const HeaderPage: React.FunctionComponent = () => {
-  const [copyText, setCopyText] = useState('Copy')
+  const [copyText, setCopyText] = useState<string>('Copy')
 
   const { account, disconnect, wallet } = useWallet()
   const dispatch = useDispatch()
@@ -103,41 +102,11 @@ export const HeaderPage: React.FunctionComponent = () => {
               <div>
                 <Image
                   className={'w-[148px] sm:w-[210px] h-auto'}
-                  src={require('@/common/assets/images/logo 1.png')}
+                  src={require('@/common/assets/images/logo.png')}
                   alt={''}
                 />
               </div>
             </Link>
-          </div>
-          <div className="grow items-center justify-center  hidden md:block ml-10">
-            <Menu
-              theme="light"
-              className={cx(
-                styles.menu,
-                ' justify-start max-w-[550px] items-start min-w-[200px] w-full h-full !bg-transparent hidden sm:flex',
-              )}
-            >
-              <Menu.Item className={'h-full mb-0 mt-0'} key="1">
-                <div className={'text-sm flex flex-col gap-2'}>
-                  <div className={'flex text-[#7C7C7C]   gap-4'}>
-                    <span className={'uppercase'}>Inventory</span>
-                    <span>1,000 NFTs</span>
-                  </div>
-                  <div className={'flex text-[#7C7C7C] uppercase gap-4'}>
-                    <span>currency</span>
-                    <span>MOVE</span>
-                  </div>
-                </div>
-              </Menu.Item>
-              <Menu.Item className={'h-full flex items-start mb-0 mt-0'} key="2">
-                <div className={'text-sm flex flex-col gap-2'}>
-                  <div className={'flex text-[#7C7C7C]  gap-4'}>
-                    <span className={'uppercase'}>network</span>
-                    <span>Movement</span>
-                  </div>
-                </div>
-              </Menu.Item>
-            </Menu>
           </div>
           <div className=" h-full w-fit absolute right-0 bottom-[50%] translate-y-2/4 flex items-center gap-x-2">
             <div className={'flex items-center gap-2 sm:gap-4'}>

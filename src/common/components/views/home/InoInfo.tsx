@@ -23,14 +23,26 @@ export const InoInfo: React.FunctionComponent = () => {
               gaming platform in the Movement ecosystem. This collection is inspired by the dangerous Panthera Stellar
               in the Movemania Universe.
             </p>
-            <p>
-              Crafted to represent unique strength and personality, the collection contributes to the development and
-              growth of the Movement ecosystem.
-            </p>
+            <div className={'mt-4'}>
+              <div className={'flex gap-2'}>
+                <span className={'uppercase'}>Inventory</span>
+                <span>2,222 NFTs</span>
+              </div>
+              <div className={'flex gap-2'}>
+                <span className={'uppercase'}>network</span>
+                <span>Movement</span>
+              </div>
+              <div className={'flex gap-2'}>
+                <span className={'uppercase'}>currency</span>
+                <span>MOVE</span>
+              </div>
+            </div>
           </div>
-          <div className={'text-[#F1CB22]'}>800/1000 NFTs minted</div>
-          <div className={'mt-3'}>
-            <Image src={require('@/common/assets/images/line-italic.png')} alt={''} />
+          <div className={'flex justify-between items-center'}>
+            <div className={'text-[#F1CB22]'}>800/1000 NFTs minted</div>
+            <div className={'mt-3'}>
+              <Image src={require('@/common/assets/images/line-italic.png')} alt={''} />
+            </div>
           </div>
         </div>
       </div>
